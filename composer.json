@@ -1,0 +1,18 @@
+{
+    "name": "spydertext/php-sdk",
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "description": "SpyderText PHP SDK",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Kramer",
+            "email": "kramer@spydertext.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
