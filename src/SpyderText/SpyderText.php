@@ -3,6 +3,7 @@ namespace SpyderText;
 
 use SpyderText\Authentication\AuthenticationSDK;
 use SpyderText\Account\AccountSDK;
+use SpyderText\Program\ProgramSDK;
 use SpyderText\Base\Component\Request;
 
 class SpyderText
@@ -65,6 +66,15 @@ class SpyderText
         }
 
         return static::$accountSDK = new AccountSDK();
+    }
+
+    public static function Program() : ProgramSDK
+    {
+        if(static::$programSDK) {
+            return static::$programSDK;
+        }
+
+        return static::$programSDK = new ProgramSDK();
     }
 
     public static function Log(string $message)
