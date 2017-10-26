@@ -51,7 +51,7 @@ class Request
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         switch($this->httpMethod)
         {
             case 'POST':
