@@ -5,6 +5,7 @@ use SpyderText\Authentication\AuthenticationSDK;
 use SpyderText\Account\AccountSDK;
 use SpyderText\Program\ProgramSDK;
 use SpyderText\Base\Component\Request;
+use SpyderText\Base\ILogger;
 
 class SpyderText
 {
@@ -18,6 +19,10 @@ class SpyderText
     protected static $apiKey;
 
     protected static $deviceToken;
+
+    protected static $logger;
+
+    protected static $debug = false;
 
     public static function setApiKey(string $apiKey)
     {
@@ -48,6 +53,16 @@ class SpyderText
     public static function getLogger() : ILogger
     {
         return static::$logger;
+    }
+
+    public static function setDebug(bool $debug)
+    {
+        static::$debug = $debug;
+    }
+
+    public static function getDebug() : bool
+    {
+        return static::$debug;
     }
 
     public static function Authentication() : AuthenticationSDK

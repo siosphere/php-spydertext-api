@@ -1,6 +1,7 @@
 <?php
 namespace SpyderText;
 
+use SpyderText\SpyderText;
 use SpyderText\Base\Component\Request;
 use SpyderText\Base\Exception\{
     BaseException,
@@ -9,8 +10,6 @@ use SpyderText\Base\Exception\{
 
 class BaseSDK
 {
-    protected $debug = false;
-
     protected $url = 'www.spydertext.com';
 
     protected $lastRequest;
@@ -55,8 +54,8 @@ class BaseSDK
 
         $this->lastMethodCalled = $url;
 
-        if($this->debug) {
-            $this->logLastRequest($request);
+        if(SpyderText::getDebug()) {
+            $this->logLastRequest($this->lastRequest);
         }
 
         $response = json_decode($this->lastRequest->getResult(), true);
@@ -113,7 +112,7 @@ class BaseSDK
         $message = sprintf("%s\n%s::%s\nResult:\n%s\nInfo:\n%s\n\n", 
             (new \DateTime)->format('Y-m-d H:i:s'), 
             static::class, 
-            self::$lastMethodCalled, 
+            $this->lastMethodCalled, 
             var_export($this->lastRequest->getResult(), true), 
             var_export($this->lastRequest->getInfo(), true)
         );
