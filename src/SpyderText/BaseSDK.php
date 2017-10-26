@@ -11,7 +11,7 @@ class BaseSDK
 {
     protected $debug = false;
 
-    protected $url = 'dev.spydertext.com';
+    protected $url = 'www.spydertext.com';
 
     protected $lastRequest;
 
