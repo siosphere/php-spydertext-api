@@ -1,5 +1,5 @@
 <?php
-namespace SpyderText\Account;
+namespace SpyderText\Program;
 
 use SpyderText\BaseSDK;
 use SpyderText\Base\Component\Collection;
