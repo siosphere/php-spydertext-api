@@ -35,7 +35,7 @@ class ProgramSDK extends BaseSDK
                 'accountId' => $accountId,
             ]);
         } catch(BaseException $ex) {
-            throw new ProgramException("Failed to put ");
+            throw new ProgramException("Failed to put account into program: " . $ex->getMessage());
         }
     }
 }
