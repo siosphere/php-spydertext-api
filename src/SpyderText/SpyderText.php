@@ -16,6 +16,8 @@ class SpyderText
 
     protected static $accountSDK;
 
+    protected static $programSDK;
+
     protected static $apiKey;
 
     protected static $deviceToken;
